@@ -9,9 +9,7 @@ def index():
     weather = weather_by_city('Tver,Russia')
 
     if weather:
-        tempr = weather["temp_C"]
-        feels = weather['FeelsLikeC']
-        return f"Погода: {tempr}, ощущается как {feels}"
+        return f"Погода: {weather['temp_C']}, ощущается как {weather['FeelsLikeC']}"
     else:
         return "Сервис погоды временно не доступен"
 
