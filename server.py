@@ -8,12 +8,7 @@ app = Flask(__name__)
 def index():
     title = "Прогноз погоды"
     weather = weather_by_city('Tver,Russia')
-
-    if weather:
-        weather_text = f"Погода: {weather['temp_C']}, ощущается как {weather['FeelsLikeC']}"
-    else:
-        weather_text = "Сервис погоды временно не доступен"
-    return render_template('index.html', page_title=title, weather=weather_text)
+    return render_template('index.html', title=title, weather=weather)
 
 
 if __name__ == "__main__":
